@@ -1,5 +1,5 @@
 #!/bin/sh
 
 HERE="$(dirname "$(readlink -f "${0}")")"
-EXEC="${HERE}/usr/bin/godot"
+EXEC="${HERE}/usr/bin/godot.linuxbsd.opt.tools.64.llvm"
 exec "${EXEC}"
