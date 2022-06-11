@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Godot
-Exec=godot
+Exec=godot.linuxbsd.opt.tools.64.llvm
 Icon=Godot_icon
 Type=Application
 Categories=Utility;
