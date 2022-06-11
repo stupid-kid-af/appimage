@@ -1,0 +1,174 @@
+# appimage-builder recipe see https://appimage-builder.readthedocs.io for details
+version: 1
+AppDir:
+  path: /home/ashutosht/Desktop/Godot/AppDir
+  app_info:
+    id: godot
+    name: Godot
+    icon: Godot_icon
+    version: latest
+    exec: usr/bin/godot
+    exec_args: $@
+  apt:
+    arch:
+    - amd64
+    allow_unauthenticated: true
+    sources:
+    - sourceline: deb http://ppa.launchpad.net/atareao/telegram/ubuntu focal main
+    - sourceline: deb https://dl.winehq.org/wine-builds/ubuntu/ focal main
+    - sourceline: deb [signed-by=/usr/share/keyrings/waydroid.gpg] https://repo.waydro.id/
+        focal main
+    - sourceline: deb https://gitlab.com/feren-os/feren-repositories-neon-focal/raw/master
+        stable neon-focal
+    - sourceline: deb [arch=amd64] https://repo.vivaldi.com/stable/deb/ stable main
+    - sourceline: deb http://ddebs.ubuntu.com/ focal          main restricted universe
+        multiverse
+    - sourceline: deb http://ddebs.ubuntu.com/ focal-security main restricted universe
+        multiverse
+    - sourceline: deb http://ddebs.ubuntu.com/ focal-updates  main restricted universe
+        multiverse
+    - sourceline: deb http://ddebs.ubuntu.com/ focal-proposed main restricted universe
+        multiverse
+    - sourceline: deb [arch=amd64,arm64,armhf] http://packages.microsoft.com/repos/code
+        stable main
+    - sourceline: deb http://deb.volian.org/volian/ scar main
+    - sourceline: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+    include:
+    - app-install-data
+    - dmz-cursor-theme
+    - gamemode
+    - gnome-menus
+    - libgpg-error0:amd64
+    - liblzma5:amd64
+    - libpulse0:amd64
+    - libtinfo6:amd64
+    - libudev1:amd64
+    - plasma-workspace
+  files:
+    include:
+    - /home/ashutosht/.local/share/godot/shader_cache/BlitShaderRD/b6f732176816388a88abf0ae371354c36b853a8334279be0d059d8a1cbb34308/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/BokehDofShaderRD/d676b7a233533a8d67c23114e10380ed4129c020e3edeb465c26eb54ecba2987/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CanvasOcclusionShaderRD/2e316995341a40d5d68e32aa23ecb820d5a3417927ebda75f473c824fcbc45da/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CanvasSdfShaderRD/83204044942451ab0252c017039369c77c4f6eb9191d493062698425fe0f2c53/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CanvasShaderRD/84fe874e4c149e936c7f6c187cc96fa3374f4188c7d3612d18d754fa6ebc2020/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CanvasShaderRD/84fe874e4c149e936c7f6c187cc96fa3374f4188c7d3612d18d754fa6ebc2020/6f707de45cc4c9ffcfd86119b62e65c1792cbc71.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CanvasShaderRD/84fe874e4c149e936c7f6c187cc96fa3374f4188c7d3612d18d754fa6ebc2020/762fa4eae5f7bcb395b67ea3ba261f417ecb439a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CanvasShaderRD/84fe874e4c149e936c7f6c187cc96fa3374f4188c7d3612d18d754fa6ebc2020/a444689c2f13418983bd978ab522bd863aed69c5.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CanvasShaderRD/84fe874e4c149e936c7f6c187cc96fa3374f4188c7d3612d18d754fa6ebc2020/eaf44e18cd01e1dcdf84a400c6fbe82c311d34e7.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/ClusterDebugShaderRD/ca09ed7b2c6a9753d9f11462fcd628ba64fb6f713208535cf84fc107a3e32ec5/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/ClusterRenderShaderRD/1345b92d2b048b7a1a06963c839f8417ccd3d8c074c4327189eec7c2f8adfd50/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/ClusterStoreShaderRD/83b285390f11e6b709c1ebbcf9dbbb573b6527c1c9dec86b93027ab1025112bd/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CopyShaderRD/1ed88f9abf924381a6288b0854822dc1a99f64d15b44ba94f60d7effc4a1bf3d/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CopyToFbShaderRD/422eb8a0a5e102f7d75ee39f8fbc87de1ba9a9e9ee59ccae81f4487a449347c0/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CubeToDpShaderRD/757a6c59109eaf5043eff585a5dd86aad51ad6f9a292973eaf3df2790762b111/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CubemapDownsamplerShaderRD/d82805f1b85ce3b60b71e9ccf52bf3d3a5e9d597a950d05f925998c2ca42ab56/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CubemapFilterShaderRD/86cdf37b9027ed4416f6b56f37c6a1a5d9b1446360fbcce35ac132366e062595/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/CubemapRoughnessShaderRD/820353b4aee5ec891244b66a52607983b3801b3a750caa2c8f9e69892505af8d/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/FsrUpscaleShaderRD/d2e28f7aa13c147fca7d2a3f212703d92fd4f7f7ff246b16a1c9dfa8833cb7a7/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/GiShaderRD/b48ac7802679f8ccded7dbc36d5c0e22798bdcadd42453e6796bc4aa161f7d35/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/LuminanceReduceShaderRD/388110ea6e9c3f07c635249ff76991687d5625bbf52e2eb0d43769812650de14/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/ParticlesCopyShaderRD/7c8f1d5d15c3ec315ea5b29a9f2e82a712dcbd498b14dacb667244ad428336f4/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/ParticlesShaderRD/13c0cdc9104e476e6d2ee5a56286312b31757b39fa4943e58a8262cb66abba5e/f128cab0b22fb7e0d9f023d6cdb81309be392d95.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/ResolveShaderRD/464d0b5d8c320cc32b8f1839fd34ed08b2fa329289f016d58cba97e71d921d11/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/RoughnessLimiterShaderRD/9facf6ef4a026526db6fd397b066ff0c72cfe042af9f4282a9ed128048e3dec0/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SceneForwardClusteredShaderRD/57c8c5f5746848a55e801669b2b771078e3953cd09c419a36bb734853884c5fb/84f3bfa29ba52d036ccb227b544f4212261b97e7.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SceneForwardClusteredShaderRD/57c8c5f5746848a55e801669b2b771078e3953cd09c419a36bb734853884c5fb/8c405797d04cff2252b29dc660af5eda3a9bef6a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/ScreenSpaceReflectionFilterShaderRD/ae1b8099889439e09432e3fae2c45b9f1677ec667eba4e53ae46c9b93980a471/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/ScreenSpaceReflectionScaleShaderRD/fb0e2f664ccbafa9163241a6dbe5355e9172f8e0903ed4c57557d2a565040199/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/ScreenSpaceReflectionShaderRD/3b29168bdf6e74e4b5d183a6dc6cd80994fecbd9b82431d19d09d89a2f5c5681/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SdfgiDebugProbesShaderRD/b550ca6f38188ab5c8a8e866280b7325a738a0552f805ad39368e8430e4076b7/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SdfgiDebugShaderRD/e425f71856ac94e5ef69028b56f4ec6e659fe345d06d7f70224e2c08b0a93e16/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SdfgiDirectLightShaderRD/f997d3a2bae0584465b76d0442832fe82313b48610df262fc0ee363ab193082d/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SdfgiIntegrateShaderRD/2817e5648c535a4385416e0e1b9b85f5c28d2927121662455d32faef2049105f/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SdfgiPreprocessShaderRD/0f30d96872789b2b8241ca24956c8aa25a6ad0ab91f3215482d07000a80963e8/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SkeletonShaderRD/78b198e66a4392c24a1536aa166c4dcfee402d07668a5795412b17b794b67d33/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SkyShaderRD/10dc7e9805b36a7b0f91d1a41c42f3c4463c193a28e9c7c1f694592bb8465b22/03e3b11c69e24394b2d955a8c0ba85587bb70839.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SkyShaderRD/10dc7e9805b36a7b0f91d1a41c42f3c4463c193a28e9c7c1f694592bb8465b22/de678811d1bad3cad4892a8db7b6ea0be197d51d.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SortShaderRD/aedd057ba12c3559455d144e6055ec36671d68a42b1dd9096c674bfafa8abe19/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SpecularMergeShaderRD/6f47037bc9796ee1804e053cdb13b71387ad297f78c71fb0af3eb2289b4889a4/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SsEffectsDownsampleShaderRD/7824a6734cee8d8025216305b3c4636f30c0ee96abca3cd14a95cb948f00b9ab/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SsaoBlurShaderRD/a811146bee5bc8c395f13ed6b7459ebce8f2439a3ba007e22afbf5b1ef6a1ba5/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SsaoImportanceMapShaderRD/5721926890740fbe341784ad9b86aa122483a0fee0d56cfe4b09b255c962aa0d/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SsaoInterleaveShaderRD/11d0867b3154f3d776f2da670f985fdb8370d5ccb7709f0975ce9a7be79d41e9/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SsaoShaderRD/4452f4b93b9917672a54f137e63fec89b28834156f5fe2395ea40dc1ff2feaa2/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SsilBlurShaderRD/696115eaf1f02b30e47f472514e5cba9e7a8fae777f1d25de9e6036c2beb199f/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SsilImportanceMapShaderRD/51c9201e77143f894d934341b42e88e3ac124b273281a9ad471966a989843710/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SsilInterleaveShaderRD/0eb7f657c6c3d87a873b071420f9da1122f399d8e92a1ccd0f4fc29d375ac507/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SsilShaderRD/85e10c163112aa6f8b9d0ebcfb641bf45f96840fbde6e215fe0d5b72563922db/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/SubsurfaceScatteringShaderRD/ad93be920a046efe8c46a2e9fc7ba490b6c3f4b3f353d04952c9f864d7d97d92/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/TaaResolveShaderRD/896eb9c10e7cd5e42ca13a30c4d646939bc7b2348422611473260ae5f1304b94/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/TonemapShaderRD/9b2734ed00b499eb1ea0899b1f19e5671e1ae8dfeb317fdacd329ff91779c1a6/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/VolumetricFogProcessShaderRD/26fa6ee116242e884f478f34e60b91b07f26e67ddec15d4ff5b172133577899b/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/VolumetricFogShaderRD/40ef03e52d578a92f37d7008022603d64d85edcbd00ee7492e31376e478c40d1/9a227745af2d65830f930370a9fbba551fbd6f60.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/VoxelGiDebugShaderRD/75e4f4ccfbd3428c5df0ca256bde1f8b0f24bc6e3f82ebf549198e1e095e06e3/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/.local/share/godot/shader_cache/VoxelGiShaderRD/4b00db42d5b80df0037ebb07cc5467c1533218c4b8d1cc997c648200439abf71/087916079fba7c625e62b0c2cca570e0fb87c99a.cache
+    - /home/ashutosht/New Game Project/icon.png
+    - /home/ashutosht/New Game Project/project.godot
+    - /home/ashutosht/icon.png
+    - /home/ashutosht/project.godot
+    - /lib/x86_64-linux-gnu/libFLAC.so.8
+    - /lib/x86_64-linux-gnu/libGLX.so.0
+    - /lib/x86_64-linux-gnu/libGLdispatch.so.0
+    - /lib/x86_64-linux-gnu/libLLVM-12.so.1
+    - /lib/x86_64-linux-gnu/libVkLayer_MESA_device_select.so
+    - /lib/x86_64-linux-gnu/libX11.so.6
+    - /lib/x86_64-linux-gnu/libXau.so.6
+    - /lib/x86_64-linux-gnu/libXcursor.so.1
+    - /lib/x86_64-linux-gnu/libXdmcp.so.6
+    - /lib/x86_64-linux-gnu/libXext.so.6
+    - /lib/x86_64-linux-gnu/libXfixes.so.3
+    - /lib/x86_64-linux-gnu/libXi.so.6
+    - /lib/x86_64-linux-gnu/libXinerama.so.1
+    - /lib/x86_64-linux-gnu/libXrandr.so.2
+    - /lib/x86_64-linux-gnu/libXrender.so.1
+    - /lib/x86_64-linux-gnu/libapparmor.so.1
+    - /lib/x86_64-linux-gnu/libasound.so.2
+    - /lib/x86_64-linux-gnu/libasyncns.so.0
+    - /lib/x86_64-linux-gnu/libbsd.so.0
+    - /lib/x86_64-linux-gnu/libedit.so.2
+    - /lib/x86_64-linux-gnu/libelf.so.1
+    - /lib/x86_64-linux-gnu/libffi.so.7
+    - /lib/x86_64-linux-gnu/libgcrypt.so.20
+    - /lib/x86_64-linux-gnu/liblz4.so.1
+    - /lib/x86_64-linux-gnu/libogg.so.0
+    - /lib/x86_64-linux-gnu/libpulse.so.0
+    - /lib/x86_64-linux-gnu/libsndfile.so.1
+    - /lib/x86_64-linux-gnu/libstdc++.so.6
+    - /lib/x86_64-linux-gnu/libvorbis.so.0
+    - /lib/x86_64-linux-gnu/libvorbisenc.so.2
+    - /lib/x86_64-linux-gnu/libvulkan.so.1
+    - /lib/x86_64-linux-gnu/libwayland-client.so.0
+    - /lib/x86_64-linux-gnu/libwrap.so.0
+    - /lib/x86_64-linux-gnu/libxcb-dri3.so.0
+    - /lib/x86_64-linux-gnu/libxcb-present.so.0
+    - /lib/x86_64-linux-gnu/libxcb-randr.so.0
+    - /lib/x86_64-linux-gnu/libxcb-sync.so.1
+    - /lib/x86_64-linux-gnu/libxshmfence.so.1
+    - /lib/x86_64-linux-gnu/libzstd.so.1
+    - /usr/lib/locale/locale-archive
+    - /usr/share/icons/default/index.theme
+    exclude:
+    - usr/share/man
+    - usr/share/doc/*/README.*
+    - usr/share/doc/*/changelog.*
+    - usr/share/doc/*/NEWS.*
+    - usr/share/doc/*/TODO.*
+  test:
+    fedora-30:
+      image: appimagecrafters/tests-env:fedora-30
+      command: ./AppRun
+    debian-stable:
+      image: appimagecrafters/tests-env:debian-stable
+      command: ./AppRun
+    archlinux-latest:
+      image: appimagecrafters/tests-env:archlinux-latest
+      command: ./AppRun
+    centos-7:
+      image: appimagecrafters/tests-env:centos-7
+      command: ./AppRun
+    ubuntu-xenial:
+      image: appimagecrafters/tests-env:ubuntu-xenial
+      command: ./AppRun
+AppImage:
+  arch: x86_64
+  update-information: guess
