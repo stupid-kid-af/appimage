@@ -1,0 +1,35 @@
+name: linux
+on: push
+  # The build name to use instead of "custom_build"
+
+jobs:
+  Web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Experiment
+        uses: actions/checkout@v2 
+      - run: |
+          sudo apt-get install -qqq git cmake zip unzip build-essential pkg-config \
+                                libx11-dev libxcursor-dev libxinerama-dev libgl1-mesa-dev libcairo2 \
+                                libglu-dev libasound2-dev libpulse-dev libfreetype6-dev \
+                                libssl-dev libudev-dev libxrandr-dev libxi-dev curl \
+                                gcc-9 g++-9 python3-pip clang
+          sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \
+                                libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libudev-dev libxi-dev libxrandr-dev yasm
+          
+          wget -O appimage-builder-x86_64.AppImage https://github.com/AppImageCrafters/appimage-builder/releases/download/v1.0.0-beta.1/appimage-builder-1.0.0-677acbd-x86_64.AppImage
+          chmod +x appimage-builder-x86_64.AppImage
+          sudo mv appimage-builder-x86_64.AppImage /usr/local/bin/appimage-builder
+          cd AppDir
+          mkdir usr && mkdir usr/bin
+          cd usr/bin
+          wget https://objects.githubusercontent.com/github-production-release-asset-2e65be/502299207/33c01e96-eb41-4d99-b916-20a679f516cf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220611%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220611T093732Z&X-Amz-Expires=300&X-Amz-Signature=f78cf46388e600a38332d6db05e64871e6b24628ff816f990c4bf3c68ed5e589&X-Amz-SignedHeaders=host&actor_id=54206927&key_id=0&repo_id=502299207&response-content-disposition=attachment%3B%20filename%3Dgodot&response-content-type=application%2Foctet-stream
+          cd ..
+          cd ..
+          cd ..
+          appimage-builder
+          
+          curl bashupload.com -T Godot-x86_64.AppImage
