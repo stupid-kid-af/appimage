@@ -26,7 +26,7 @@ jobs:
           cd AppDir
           mkdir usr && mkdir usr/bin
           cd usr/bin
-          wget https://objects.githubusercontent.com/github-production-release-asset-2e65be/502299207/33c01e96-eb41-4d99-b916-20a679f516cf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220611%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220611T093732Z&X-Amz-Expires=300&X-Amz-Signature=f78cf46388e600a38332d6db05e64871e6b24628ff816f990c4bf3c68ed5e589&X-Amz-SignedHeaders=host&actor_id=54206927&key_id=0&repo_id=502299207&response-content-disposition=attachment%3B%20filename%3Dgodot&response-content-type=application%2Foctet-stream
+          wget https://github.com/stupid-kid-af/appimage/releases/download/test/godot
           cd ..
           cd ..
           cd ..
